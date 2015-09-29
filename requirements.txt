@@ -1,0 +1,6 @@
+twisted
+pyOpenSSL
+service_identity
+txpostgres
+psycopg2
+ptsmpp

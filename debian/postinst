@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+chmod 640 /etc/esmed/esmed.conf
+
+if [ -x "/etc/init.d/esmed" ]; then
+	update-rc.d esmed defaults >/dev/null
+	invoke-rc.d esmed start || exit $?
+fi
+
+#DEBHELPER#

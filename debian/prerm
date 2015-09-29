@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+if [ -x "/etc/init.d/esmed" ]; then
+	invoke-rc.d esmed stop || exit $?
+fi
+
+#DEBHELPER#

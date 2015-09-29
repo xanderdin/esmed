@@ -1,0 +1,8 @@
+etc/init.d
+etc/default
+etc/esmed
+var/lib/esmed
+var/log/esmed
+usr/share/doc/esmed
+usr/share/esmed/esmed
+usr/share/esmed/twisted/plugins

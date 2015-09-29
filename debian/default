@@ -1,0 +1,4 @@
+pidfile=/var/run/esmed.pid
+rundir=/var/lib/esmed/
+config=/etc/esmed/esmed.conf 
+

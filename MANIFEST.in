@@ -1,0 +1,7 @@
+graft sql
+graft setup
+graft debian
+include LICENSE
+include requirements.txt
+include cfg/esmed.conf
+recursive-include src *.py

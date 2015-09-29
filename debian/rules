@@ -1,0 +1,58 @@
+#!/usr/bin/make -f
+
+#export DH_COMPAT=5
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp install-stamp
+	dh_clean
+
+install: install-stamp
+install-stamp: build-stamp
+	dh_testdir
+	dh_testroot
+	#dh_clean -k
+	dh_prep
+	dh_installdirs
+
+	# Add here commands to install the package into debian/esmed.
+	#cp tap.py debian/esmed/etc/
+	cp debian/init.d debian/esmed/etc/init.d/esmed
+	cp debian/default debian/esmed/etc/default/esmed
+	cp debian/copyright debian/esmed/usr/share/doc/esmed/copyright
+	#cp debian/README.Debian debian/esmed/usr/share/doc/esmed/
+	touch debian/esmed/usr/share/esmed/package-installed
+	touch install-stamp
+
+	# Copy esmed files
+	cp cfg/esmed.conf debian/esmed/etc/esmed/
+	cp -a sql debian/esmed/usr/share/doc/esmed/
+	cp src/esmed/*.py debian/esmed/usr/share/esmed/esmed/
+	cp src/twisted/plugins/*.py debian/esmed/usr/share/esmed/twisted/plugins/
+
+binary-arch: build install
+
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_strip
+	dh_installchangelogs
+	dh_compress
+	dh_python2
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+source diff:
+	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

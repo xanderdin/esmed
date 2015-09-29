@@ -1,0 +1,16 @@
+Source: esmed
+Section: net
+Priority: extra
+Maintainer: Alexander Pravdin <aledin@mail.ru>
+Build-Depends: debhelper (>= 9), python (>= 2.6.5-7), dh-python
+Standards-Version: 3.9.6
+
+Package: esmed
+Architecture: all
+Depends: python (>= 2.7.3-4), python-twisted (>= 12.0.0-1), python-txpostgres (>= 1.4.0-1), python-ptsmpp (>= 0.1.0-1)
+Description: SMPP ESME daemon (esmed)
+ SMPP ESME daemon (esmed) is an SMPP client application for sending short
+ messages (SMS) through an SMPP server (SMSC). It can connect to an SMPP
+ server as a transmitter or as a transceiver. ESME daemon uses PostgreSQL
+ as its backend database. It's also build on Twisted framework, so to run
+ it you need twistd daemon.
