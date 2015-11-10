@@ -27,6 +27,8 @@ database (see below) using db.sql file and adjust configuration in the
 configuration. You can find db.sql file in /usr/share/doc/esmed/sql
 directory after deb package installation.
 
+Debian package can be found at https://github.com/xanderdin/esmed-dist-debian
+
 
 Installation with PyPi
 ----------------------
