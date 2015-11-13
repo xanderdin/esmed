@@ -33,6 +33,7 @@ install-stamp: build-stamp
 	# Copy esmed files
 	cp cfg/esmed.conf debian/esmed/etc/esmed/
 	cp -a sql debian/esmed/usr/share/doc/esmed/
+	cp README.rst debian/esmed/usr/share/doc/esmed/
 	cp src/esmed/*.py debian/esmed/usr/share/esmed/esmed/
 	cp src/twisted/plugins/*.py debian/esmed/usr/share/esmed/twisted/plugins/
 

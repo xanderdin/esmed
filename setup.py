@@ -21,7 +21,7 @@ def read(fname):
 
 setup(
     name='esmed',
-    version='0.1.0',
+    version='0.1.1',
     description='SMPP ESME daemon (esmed)',
     long_description=read('README.rst'),
     author='Alexander Pravdin',
