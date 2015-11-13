@@ -199,7 +199,7 @@ class DbDetector(reconnection.DeadConnectionDetector):
         return reconnection.DeadConnectionDetector.reconnect(self)
 
     def connectionRecovered(self):
-        self.service.on_db_connected()
+        self.service.on_db_connected(None)
         return reconnection.DeadConnectionDetector.connectionRecovered(self)
 
 
