@@ -68,7 +68,7 @@ table and acts accordingly. Example:
   esme_password) values (TRUE, 'server-address', 2775, 'my-login',
   'my-password');
 
-Fields of the *smp_servers* table:
+Fields of the *smpp_servers* table:
 
 :enabled:
   If set to TRUE, the SMPP server credentials from this record
